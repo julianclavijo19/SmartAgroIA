@@ -206,16 +206,7 @@ export default function App() {
   const isSaved = currentResult ? savedIds.has(currentResult.id) : false;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E8F5E9] to-[#A5D6A7] flex items-start justify-center sm:items-center sm:py-6">
-      <div
-        className="
-          w-full max-w-sm
-          h-[100dvh] sm:h-[812px]
-          sm:rounded-[44px] sm:shadow-2xl sm:overflow-hidden
-          bg-white flex flex-col relative overflow-hidden
-          sm:border sm:border-black/10
-        "
-      >
+    <div className="min-h-screen bg-white flex flex-col w-full h-[100dvh] relative overflow-hidden">
         {screen === "splash" && <SplashScreen onNavigate={navigate} />}
         {screen === "home" && (
           <HomeScreen onNavigate={navigate} scanCount={records.length} />
@@ -251,7 +242,6 @@ export default function App() {
             healthyCount={records.filter(r => r.severity === "Sano").length}
           />
         )}
-      </div>
     </div>
   );
 }
